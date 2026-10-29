@@ -229,7 +229,8 @@
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Cam / Dolgu Tipi *</label>
                             <select id="select-cam" name="Cam Tipi" onchange="updateHingeView()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
-                                <option value="Bronz Reflekte" selected>Bronz Reflekte</option>
+                                <option value="Füme Reflekte" selected>Füme Reflekte</option>
+                                <option value="Bronz Reflekte">Bronz Reflekte</option>
                                 <option value="Füme Ayna">Füme Ayna</option>
                                 <option value="Füme Cam">Füme Cam</option>
                                 <option value="Düz Ayna">Düz Ayna</option>
@@ -310,9 +311,9 @@
                                 <div id="side-indicator-title" class="text-xs font-bold text-sky-400 absolute top-3 tracking-wider">SOL MENTEŞE ALÜMİNYUM KAPAK</div>
                                 
                                 <!-- ALÜMİNYUM ÇERÇEVELİ KAPAK MODELİ -->
-                                <div id="door-preview" class="w-32 h-56 border-[5px] border-slate-400 rounded-sm relative shadow-2xl flex flex-col justify-between p-1 transition-all duration-300 bg-amber-950/70">
+                                <div id="door-preview" class="w-32 h-56 border-[5px] border-slate-400 rounded-sm relative shadow-2xl flex flex-col justify-between p-1 transition-all duration-300 bg-slate-950/80">
                                     <!-- Cam Efekti Katmanı -->
-                                    <div id="glass-overlay" class="absolute inset-0 bg-gradient-to-tr from-amber-600/40 via-amber-300/30 to-transparent pointer-events-none transition-all duration-300"></div>
+                                    <div id="glass-overlay" class="absolute inset-0 bg-gradient-to-tr from-slate-600/55 via-slate-400/30 to-sky-400/20 pointer-events-none transition-all duration-300"></div>
                                     
                                     <span class="text-[8px] font-bold text-slate-400 z-10 tracking-widest pointer-events-none">ÜST</span>
                                     
@@ -435,10 +436,14 @@
             }
 
             // Cam Türüne Göre Arka Plan ve Yansıma Efektleri
-            let glassBgClass = "bg-sky-950/40";
-            let glassOverlayClass = "bg-gradient-to-tr from-sky-500/10 via-white/10 to-transparent";
+            let glassBgClass = "bg-slate-950/80";
+            let glassOverlayClass = "bg-gradient-to-tr from-slate-600/55 via-slate-400/30 to-sky-400/20";
 
             switch(selectedGlass) {
+                case "Füme Reflekte":
+                    glassBgClass = "bg-slate-950/80";
+                    glassOverlayClass = "bg-gradient-to-tr from-slate-600/55 via-slate-400/30 to-sky-400/20";
+                    break;
                 case "Bronz Reflekte":
                     glassBgClass = "bg-amber-950/70";
                     glassOverlayClass = "bg-gradient-to-tr from-amber-600/40 via-amber-300/30 to-transparent";
