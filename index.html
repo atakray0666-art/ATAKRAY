@@ -76,8 +76,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative bg-slate-900 text-white py-32 lg:py-40 overflow-hidden">
-        <div class="absolute inset-0 opacity-30 bg-[url('https://i.ibb.co/3ykf13Kk/ATAK2.jpg')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-slate-950"></div>
         
         <div class="relative max-w-7xl mx-auto px-6">
             <div class="max-w-2xl">
@@ -153,12 +152,13 @@
                 </div>
 
                 <div class="relative">
-                    <div class="bg-slate-100 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 p-2">
-                        <img src="https://i.ibb.co/3ykf13Kk/ATAK2.jpg" alt="Atakray İmalat ve Üretim Tesisi" class="rounded-xl w-full h-[420px] object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -left-6 bg-slate-900 text-white p-6 rounded-xl shadow-xl hidden sm:block border border-slate-800">
-                        <div class="text-2xl font-bold text-sky-400 mb-1">%100 Yerli İmalat</div>
-                        <div class="text-xs text-slate-300">Ankara Siteler / Altındağ İmalat Merkezi</div>
+                    <div class="bg-slate-900 text-white p-12 rounded-2xl shadow-2xl border border-slate-800 text-center">
+                        <i class="fa-solid fa-industry text-6xl text-sky-500 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-2">ATAKRAY ALÜMİNYUM</h3>
+                        <p class="text-slate-400 text-sm mb-6">Ankara Siteler / Altındağ İmalat Merkezi</p>
+                        <div class="inline-block bg-sky-600 text-white text-xs font-semibold px-4 py-2 rounded-lg">
+                            %100 Yerli İmalat & Yüksek Kalite
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,13 +174,13 @@
                 <p class="text-slate-600">Alüminyum çerçeve kapak, sürgü sistemleri, özel profiller ve mekanizma çözümlerimiz.</p>
             </div>
 
-            <!-- Fotoğraf Grid Yapısı -->
+            <!-- Fotoğraf Grid Yapısı (Direct Relative Image Paths & Fallback Handling) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- 1. Fotoğraf: ATAK1.jpg -->
+                <!-- 1. Ürün -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
-                    <div class="h-80 overflow-hidden bg-slate-100">
-                        <img src="https://i.ibb.co/N6L05gJp/ATAK1.jpg" alt="Atakray Alüminyum Kapak Sistemleri ve İmalat Kareleri" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="h-80 overflow-hidden bg-slate-100 flex items-center justify-center">
+                        <img src="ATAK1.jpg" alt="Sürgü Kapak ve Profil Koleksiyonu" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/ATAK1.jpg'">
                     </div>
                     <div class="p-5">
                         <h4 class="font-bold text-slate-900 text-base">Sürgü Kapak ve Profil Koleksiyonu</h4>
@@ -188,10 +188,10 @@
                     </div>
                 </div>
 
-                <!-- 2. Fotoğraf: ATAK2.jpg -->
+                <!-- 2. Ürün -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
-                    <div class="h-80 overflow-hidden bg-slate-100">
-                        <img src="https://i.ibb.co/3ykf13Kk/ATAK2.jpg" alt="Atakray Dükkan ve Ürün Detayları" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="h-80 overflow-hidden bg-slate-100 flex items-center justify-center">
+                        <img src="ATAK2.jpg" alt="Mağaza / İmalathane ve Mekanizmalar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/ATAK2.jpg'">
                     </div>
                     <div class="p-5">
                         <h4 class="font-bold text-slate-900 text-base">Mağaza / İmalathane ve Mekanizmalar</h4>
@@ -199,10 +199,10 @@
                     </div>
                 </div>
 
-                <!-- 3. Fotoğraf: ATAK3.jpg -->
+                <!-- 3. Ürün -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
-                    <div class="h-80 overflow-hidden bg-slate-100">
-                        <img src="https://i.ibb.co/6cc5v1v3/ATAK3.jpg" alt="Atakray Dekoratif Cam ve Köşe Bağlantıları" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="h-80 overflow-hidden bg-slate-100 flex items-center justify-center">
+                        <img src="ATAK3.jpg" alt="Dekoratif Cam ve Aksesuarlar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/ATAK3.jpg'">
                     </div>
                     <div class="p-5">
                         <h4 class="font-bold text-slate-900 text-base">Dekoratif Cam ve Aksesuarlar</h4>
