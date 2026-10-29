@@ -243,75 +243,75 @@
             </div>
 
             <div class="bg-slate-900 text-white p-8 lg:p-12 rounded-3xl shadow-2xl border border-slate-800">
-                <form onsubmit="event.preventDefault(); alert('Ölçü ve teklif talebiniz başarıyla alınmıştır! Teknik ekibimiz verdiğiniz ölçülere göre fiyat çalışması yaparak en kısa sürede sizinle iletişime geçecektir.'); this.reset();" class="space-y-6">
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Adınız Soyadınız *</label>
-                            <input type="text" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Ahmet Yılmaz">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Telefon Numaranız *</label>
-                            <input type="tel" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="0532 ...">
-                        </div>
-                    </div>
+                <form action="https://formspree.io/f/https://formspree.io/f/xppplwnn" method="POST" class="space-y-6">
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Adınız Soyadınız *</label>
+            <input type="text" name="Ad Soyad" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Ahmet Yılmaz">
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Telefon Numaranız *</label>
+            <input type="tel" name="Telefon" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="0532 ...">
+        </div>
+    </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ürün / Sistem Türü</label>
-                            <select class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
-                                <option>Camlı Çerçeve Kapak</option>
-                                <option>Ray Dolap Profili</option>
-                                <option>Endüstriyel Profil</option>
-                                <option>Özel Kesim Doğrama</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Profil Rengi</label>
-                            <select class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
-                                <option>Mat Eloksal (Gri)</option>
-                                <option>Mat Siyah</option>
-                                <option>İnox / Bronz</option>
-                                <option>Özel RAL Boya</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Cam / Dolgu Tipi</label>
-                            <select class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
-                                <option>Füme Reflekte Cam</option>
-                                <option>Temperli Şeffaf Cam</option>
-                                <option>Füme / Bronz Cam</option>
-                                <option>Flotal Ayna</option>
-                                <option>Kumlu / Desenli Cam</option>
-                                <option>Camsız (Sadece Profil)</option>
-                            </select>
-                        </div>
-                    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ürün / Sistem Türü</label>
+            <select name="Urun Tipi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
+                <option>Camlı Çerçeve Kapak</option>
+                <option>Ray Dolap Profili</option>
+                <option>Endüstriyel Profil</option>
+                <option>Özel Kesim Doğrama</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Profil Rengi</label>
+            <select name="Profil Rengi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
+                <option>Mat Eloksal (Gri)</option>
+                <option>Mat Siyah</option>
+                <option>İnox / Bronz</option>
+                <option>Özel RAL Boya</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Cam / Dolgu Tipi</label>
+            <select name="Cam Tipi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
+                <option>Füme Reflekte Cam</option>
+                <option>Temperli Şeffaf Cam</option>
+                <option>Füme / Bronz Cam</option>
+                <option>Flotal Ayna</option>
+                <option>Kumlu / Desenli Cam</option>
+                <option>Camsız (Sadece Profil)</option>
+            </select>
+        </div>
+    </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 bg-slate-800/60 rounded-2xl border border-slate-700/60">
-                        <div>
-                            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Genişlik (cm veya mm)</label>
-                            <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Örn: 60 cm ya da 600 mm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Yükseklik (cm veya mm)</label>
-                            <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Örn: 210 cm ya da 2100 mm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Adet</label>
-                            <input type="number" min="1" value="1" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
-                        </div>
-                    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 bg-slate-800/60 rounded-2xl border border-slate-700/60">
+        <div>
+            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Genişlik (cm veya mm)</label>
+            <input type="text" name="Genislik" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Örn: 60 cm">
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Yükseklik (cm veya mm)</label>
+            <input type="text" name="Yukseklik" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Örn: 210 cm">
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Adet</label>
+            <input type="number" name="Adet" min="1" value="1" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
+        </div>
+    </div>
 
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ek Açıklama veya Diğer Ölçüleriniz</label>
-                        <textarea rows="3" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Birden fazla ölçü varsa buraya listeleyebilirsiniz..."></textarea>
-                    </div>
+    <div>
+        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ek Açıklama veya Diğer Ölçüleriniz</label>
+        <textarea name="Ek Aciklama" rows="3" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Birden fazla ölçü varsa buraya listeleyebilirsiniz..."></textarea>
+    </div>
 
-                    <button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-sky-600/30 text-base">
-                        Ölçülere Göre Fiyat Teklifi İste
-                    </button>
-                </form>
+    <button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-sky-600/30 text-base">
+        Ölçülere Göre Fiyat Teklifi İste
+    </button>
+</form>
             </div>
         </div>
     </section>
