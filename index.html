@@ -45,7 +45,6 @@
             <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm">
                 <a href="#home" class="text-sky-600 transition">Ana Sayfa</a>
                 <a href="#about" class="text-slate-600 hover:text-sky-600 transition">Hakkımızda</a>
-                <a href="#gallery" class="text-slate-600 hover:text-sky-600 transition">Ürün Galerisi</a>
                 <a href="#options" class="text-slate-600 hover:text-sky-600 transition">Renk & Camlar</a>
                 <a href="#calculator" class="text-slate-600 hover:text-sky-600 transition">Ölçü & Fiyat Al</a>
                 <a href="#contact" class="text-slate-600 hover:text-sky-600 transition">İletişim</a>
@@ -67,7 +66,6 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4 space-y-3 font-medium">
             <a href="#home" class="block text-sky-600" onclick="toggleMenu()">Ana Sayfa</a>
             <a href="#about" class="block text-slate-600" onclick="toggleMenu()">Hakkımızda</a>
-            <a href="#gallery" class="block text-slate-600" onclick="toggleMenu()">Ürün Galerisi</a>
             <a href="#options" class="block text-slate-600" onclick="toggleMenu()">Renk & Camlar</a>
             <a href="#calculator" class="block text-slate-600" onclick="toggleMenu()">Ölçü & Fiyat Al</a>
             <a href="#contact" class="block text-slate-600" onclick="toggleMenu()">İletişim</a>
@@ -76,7 +74,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative bg-slate-900 text-white py-32 lg:py-40 overflow-hidden">
-        <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image: url('ATAK2.jpg');"></div>
+        <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent"></div>
         
         <div class="relative max-w-7xl mx-auto px-6">
@@ -94,8 +92,8 @@
                     <a href="#calculator" class="bg-sky-600 hover:bg-sky-700 text-white text-center px-8 py-4 rounded-xl font-semibold shadow-lg shadow-sky-600/30 transition duration-300">
                         Hemen Ölçü Girin
                     </a>
-                    <a href="#gallery" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-center px-8 py-4 rounded-xl font-semibold backdrop-blur-sm transition duration-300">
-                        Ürünlerimizi İnceleyin
+                    <a href="#about" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-center px-8 py-4 rounded-xl font-semibold backdrop-blur-sm transition duration-300">
+                        Hakkımızda
                     </a>
                 </div>
             </div>
@@ -153,68 +151,20 @@
                 </div>
 
                 <div class="relative">
-                    <div class="bg-slate-100 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 p-2">
-                        <img src="ATAK2.jpg" alt="Atakray İmalat ve Üretim Tesisi" class="rounded-xl w-full h-[420px] object-cover">
+                    <div class="bg-slate-100 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 p-4">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Atakray İmalat ve Üretim Tesisi" class="rounded-xl w-full h-[420px] object-cover">
                     </div>
                     <div class="absolute -bottom-6 -left-6 bg-slate-900 text-white p-6 rounded-xl shadow-xl hidden sm:block border border-slate-800">
                         <div class="text-2xl font-bold text-sky-400 mb-1">%100 Yerli İmalat</div>
-                        <div class="text-xs text-slate-300">Ankara Siteler / Altındağ İmalat Merkezi</div>
+                        <div class="text-xs text-slate-300">Ankara Merkezli Güçlü Altyapı</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ürünler ve Uygulama Galerisi -->
-    <section id="gallery" class="py-24 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-sky-600 font-bold uppercase tracking-wider text-xs">İmalat & Ürünlerimiz</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Ürün Ve Uygulama Galerisi</h2>
-                <p class="text-slate-600">Alüminyum çerçeve kapak, sürgü sistemleri, özel profiller ve mekanizma çözümlerimiz.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- 1. Fotoğraf -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
-                    <div class="h-80 overflow-hidden bg-slate-100 flex items-center justify-center">
-                        <img src="ATAK1.jpg" alt="Sürgü Kapak ve Profil Koleksiyonu" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-slate-900 text-base">Sürgü Kapak ve Profil Koleksiyonu</h4>
-                        <p class="text-xs text-slate-500 mt-1">Aynalı sürgü kapaklar, boy kulplar ve imalatımızdan seçkin detaylar.</p>
-                    </div>
-                </div>
-
-                <!-- 2. Fotoğraf -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
-                    <div class="h-80 overflow-hidden bg-slate-100 flex items-center justify-center">
-                        <img src="ATAK2.jpg" alt="Mağaza / İmalathane ve Mekanizmalar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-slate-900 text-base">Mağaza / İmalathane ve Mekanizmalar</h4>
-                        <p class="text-xs text-slate-500 mt-1">Ankara Siteler mağazamız, ray mekanizmaları ve entegre profil sistemlerimiz.</p>
-                    </div>
-                </div>
-
-                <!-- 3. Fotoğraf -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
-                    <div class="h-80 overflow-hidden bg-slate-100 flex items-center justify-center">
-                        <img src="ATAK3.jpg" alt="Dekoratif Cam ve Aksesuarlar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-slate-900 text-base">Dekoratif Cam ve Aksesuarlar</h4>
-                        <p class="text-xs text-slate-500 mt-1">Özel desenli kapaklar, köşe bağlantı elemanları ve sürgü donanımları.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Options Section: Renk ve Cam Seçenekleri -->
-    <section id="options" class="py-24 bg-white">
+    <!-- Options Section: Renk ve Cam Seçenekleri (Füme Reflekte Eklendi) -->
+    <section id="options" class="py-24 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-sky-600 font-bold uppercase tracking-wider text-xs">Seçenek Havuzu</span>
@@ -224,24 +174,24 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Profil Renkleri -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
                     <h3 class="text-xl font-bold mb-6 flex items-center text-sky-600">
                         <i class="fa-solid fa-palette mr-3"></i> Alüminyum Profil Renkleri
                     </h3>
                     <div class="space-y-3 text-sm">
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
                             <span class="font-semibold text-slate-900">Asit Mat Eloksal (Gri)</span>
                             <span class="w-6 h-6 rounded-full bg-slate-400 border"></span>
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
                             <span class="font-semibold text-slate-900">Mat Siyah (Soft Touch)</span>
                             <span class="w-6 h-6 rounded-full bg-slate-900 border"></span>
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
                             <span class="font-semibold text-slate-900">İnox / Bronz Tonları</span>
                             <span class="w-6 h-6 rounded-full bg-amber-700 border"></span>
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
                             <span class="font-semibold text-slate-900">Özel RAL Boya Kodları</span>
                             <span class="w-6 h-6 rounded-full bg-sky-600 border"></span>
                         </div>
@@ -249,32 +199,32 @@
                 </div>
 
                 <!-- Cam Seçenekleri -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
                     <h3 class="text-xl font-bold mb-6 flex items-center text-sky-600">
                         <i class="fa-solid fa-glass-water mr-3"></i> Cam ve Ayna Alternatifleri
                     </h3>
                     <div class="space-y-3 text-sm">
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
                             <div>
                                 <span class="font-semibold text-slate-950 block">Füme Reflekte Cam (Popüler)</span>
                                 <span class="text-xs text-slate-500">Işığa göre hafif yansımalı, lüks ve modern görünüm.</span>
                             </div>
                             <i class="fa-solid fa-square text-slate-700 text-xl"></i>
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
                             <span class="font-semibold text-slate-900">Temperli Şeffaf Düz Cam</span>
                             <i class="fa-solid fa-square text-slate-400 text-lg"></i>
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
                             <span class="font-semibold text-slate-900">Füme / Bronz Renkli Cam</span>
                             <i class="fa-solid fa-square text-amber-900 text-lg"></i>
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100">
-                            <span class="font-semibold text-slate-900">Flotal Ayna (Gümüş / Füme / Baklava)</span>
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
+                            <span class="font-semibold text-slate-900">Flotal Ayna (Gümüş / Füme)</span>
                             <i class="fa-solid fa-square text-slate-300 text-lg"></i>
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100">
-                            <span class="font-semibold text-slate-900">Kumlu / Asitli / Desenli Cam</span>
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
+                            <span class="font-semibold text-slate-900">Kumlu / Asitli Desenli Cam</span>
                             <i class="fa-solid fa-square text-slate-500 text-lg"></i>
                         </div>
                     </div>
@@ -284,7 +234,7 @@
     </section>
 
     <!-- Interactive Measurement & Price Request Section -->
-    <section id="calculator" class="py-24 bg-slate-50 border-t border-slate-200">
+    <section id="calculator" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="text-sky-600 font-bold uppercase tracking-wider text-xs">Ölçüye Göre Fiyat Talebi</span>
@@ -294,79 +244,80 @@
 
             <div class="bg-slate-900 text-white p-8 lg:p-12 rounded-3xl shadow-2xl border border-slate-800">
                 <form action="https://formspree.io/f/xppplwnn" method="POST" class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Adınız Soyadınız *</label>
-                            <input type="text" name="Ad Soyad" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Ahmet Yılmaz">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Telefon Numaranız *</label>
-                            <input type="tel" name="Telefon" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="0532 ...">
-                        </div>
-                    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Adınız Soyadınız *</label>
+            <input type="text" name="Ad Soyad" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Ahmet Yılmaz">
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Telefon Numaranız *</label>
+            <input type="tel" name="Telefon" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="0532 ...">
+        </div>
+    </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ürün / Sistem Türü</label>
-                            <select name="Urun Tipi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
-                                <option>Camlı Çerçeve Kapak</option>
-                                <option>Ray Dolap Profili / Sürgü Sistem</option>
-                                <option>Endüstriyel Profil / Boy Kulp</option>
-                                <option>Aynalı Sürgü Kapak</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Profil Rengi</label>
-                            <select name="Profil Rengi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
-                                <option>Mat Eloksal (Gri)</option>
-                                <option>Mat Siyah</option>
-                                <option>İnox / Bronz</option>
-                                <option>Özel RAL Boya</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Cam / Dolgu Tipi</label>
-                            <select name="Cam Tipi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
-                                <option>Füme Reflekte Cam</option>
-                                <option>Baklava / Flotal Ayna</option>
-                                <option>Temperli Şeffaf Cam</option>
-                                <option>Füme / Bronz Cam</option>
-                                <option>Kumlu / Desenli Cam</option>
-                                <option>Camsız (Sadece Profil)</option>
-                            </select>
-                        </div>
-                    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ürün / Sistem Türü</label>
+            <select name="Urun Tipi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
+                <option>Camlı Çerçeve Kapak</option>
+                <option>Ray Dolap Profili</option>
+                <option>Endüstriyel Profil</option>
+                <option>Özel Kesim Doğrama</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Profil Rengi</label>
+            <select name="Profil Rengi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
+                <option>Mat Eloksal (Gri)</option>
+                <option>Mat Siyah</option>
+                <option>İnox / Bronz</option>
+                <option>Özel RAL Boya</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Cam / Dolgu Tipi</label>
+            <select name="Cam Tipi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
+                <option>Füme Reflekte Cam</option>
+                <option>Temperli Şeffaf Cam</option>
+                <option>Füme / Bronz Cam</option>
+                <option>Flotal Ayna</option>
+                <option>Kumlu / Desenli Cam</option>
+                <option>Camsız (Sadece Profil)</option>
+            </select>
+        </div>
+    </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 bg-slate-800/60 rounded-2xl border border-slate-700/60">
-                        <div>
-                            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Genişlik (cm veya mm)</label>
-                            <input type="text" name="Genislik" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Örn: 60 cm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Yükseklik (cm veya mm)</label>
-                            <input type="text" name="Yukseklik" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Örn: 210 cm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Adet</label>
-                            <input type="number" name="Adet" min="1" value="1" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
-                        </div>
-                    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 bg-slate-800/60 rounded-2xl border border-slate-700/60">
+        <div>
+            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Genişlik (cm veya mm)</label>
+            <input type="text" name="Genislik" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Örn: 60 cm">
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Yükseklik (cm veya mm)</label>
+            <input type="text" name="Yukseklik" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Örn: 210 cm">
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-sky-400 uppercase mb-2">Adet</label>
+            <input type="number" name="Adet" min="1" value="1" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm">
+        </div>
+    </div>
 
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ek Açıklama veya Diğer Ölçüleriniz</label>
-                        <textarea name="Ek Aciklama" rows="3" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Birden fazla ölçü varsa buraya listeleyebilirsiniz..."></textarea>
-                    </div>
+    <div>
+        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ek Açıklama veya Diğer Ölçüleriniz</label>
+        <textarea name="Ek Aciklama" rows="3" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Birden fazla ölçü varsa buraya listeleyebilirsiniz..."></textarea>
+    </div>
 
-                    <button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-sky-600/30 text-base">
-                        Ölçülere Göre Fiyat Teklifi İste
-                    </button>
-                </form>
+    <button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-sky-600/30 text-base">
+        Ölçülere Göre Fiyat Teklifi İste
+    </button>
+</form>
             </div>
         </div>
     </section>
 
     <!-- Contact Info Section -->
-    <section id="contact" class="py-20 bg-white border-t border-slate-200">
+    <section id="contact" class="py-20 bg-slate-50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6 text-center max-w-2xl">
             <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Doğrudan İletişim</h2>
             <p class="text-slate-600 text-sm mb-8">Ankara Altındağ imalat merkezimizle doğrudan telefon veya e-posta yoluyla da görüşebilirsiniz.</p>
@@ -385,7 +336,6 @@
             <div class="flex space-x-6">
                 <a href="#home" class="hover:text-slate-400 transition">Ana Sayfa</a>
                 <a href="#about" class="hover:text-slate-400 transition">Hakkımızda</a>
-                <a href="#gallery" class="hover:text-slate-400 transition">Galeri</a>
                 <a href="#options" class="hover:text-slate-400 transition">Renk & Camlar</a>
                 <a href="#calculator" class="hover:text-slate-400 transition">Ölçü Ver</a>
                 <a href="#contact" class="hover:text-slate-400 transition">İletişim</a>
