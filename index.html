@@ -57,13 +57,11 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden text-slate-700 text-xl focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4 space-y-3 font-medium">
             <a href="#home" class="block text-sky-600" onclick="toggleMenu()">Ana Sayfa</a>
             <a href="#about" class="block text-slate-600" onclick="toggleMenu()">Hakkımızda</a>
@@ -85,76 +83,33 @@
                     Ankara / Altındağ Alüminyum İmalat
                 </span>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                    Ölçünüzü ve Menteşe Yerini Belirtin, Fiyat Sunalım
+                    Ölçünüzü ve Menteşe Yönünü Belirtin
                 </h1>
                 <p class="text-lg text-slate-300 mb-8 font-light leading-relaxed">
-                    İstediğiniz kapak ölçülerini girip görsel şablon üzerinden menteşe yerleşimlerini işaretleyerek sipariş oluşturabilirsiniz.
+                    İstediğiniz kapak ölçülerini girerek Menteşe Yönünü (Sağ / Sol) kolayca seçip hızlı teklif alabilirsiniz.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#calculator" class="bg-sky-600 hover:bg-sky-700 text-white text-center px-8 py-4 rounded-xl font-semibold shadow-lg shadow-sky-600/30 transition duration-300">
-                        Hemen Ölçü & Menteşe Girin
+                        Hemen Ölçü Girin
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ürünler ve Uygulama Galerisi -->
-    <section id="gallery" class="py-24 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-sky-600 font-bold uppercase tracking-wider text-xs">İmalat & Ürünlerimiz</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Ürün Ve Uygulama Galerisi</h2>
-                <p class="text-slate-600">Alüminyum çerçeve kapak, sürgü sistemleri, özel profiller ve mekanizma çözümlerimiz.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
-                    <div class="h-80 overflow-hidden bg-slate-100 flex items-center justify-center">
-                        <img src="ATAK1.jpg" alt="Sürgü Kapak ve Profil Koleksiyonu" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/ATAK1.jpg'">
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-slate-900 text-base">Sürgü Kapak ve Profil Koleksiyonu</h4>
-                        <p class="text-xs text-slate-500 mt-1">Aynalı sürgü kapaklar, boy kulplar ve imalatımızdan seçkin detaylar.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
-                    <div class="h-80 overflow-hidden bg-slate-100 flex items-center justify-center">
-                        <img src="ATAK2.jpg" alt="Mağaza / İmalathane ve Mekanizmalar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/ATAK2.jpg'">
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-slate-900 text-base">Mağaza / İmalathane ve Mekanizmalar</h4>
-                        <p class="text-xs text-slate-500 mt-1">Ankara Siteler mağazamız, ray mekanizmaları ve entegre profil sistemlerimiz.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
-                    <div class="h-80 overflow-hidden bg-slate-100 flex items-center justify-center">
-                        <img src="ATAK3.jpg" alt="Dekoratif Cam ve Aksesuarlar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/ATAK3.jpg'">
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-slate-900 text-base">Dekoratif Cam ve Aksesuarlar</h4>
-                        <p class="text-xs text-slate-500 mt-1">Özel desenli kapaklar, köşe bağlantı elemanları ve sürgü donanımları.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Measurement & Hinge Marking Section -->
+    <!-- Form Section: Ölçü ve Sağ/Sol Menteşe Seçimi -->
     <section id="calculator" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-12">
-                <span class="text-sky-600 font-bold uppercase tracking-wider text-xs">Ölçü ve Menteşe Planı</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Kapak Ölçüsü ve Menteşe İşaretleme</h2>
-                <p class="text-slate-600 text-sm">Aşağıdaki şablondan kapak yönünü seçip menteşe adet ve konumlarını belirleyerek teklif isteyin.</p>
+                <span class="text-sky-600 font-bold uppercase tracking-wider text-xs">Sipariş & Teklif Formu</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Menteşe Yönü ve Ölçü Formu</h2>
+                <p class="text-slate-600 text-sm">Kapağınızın Sağ mı yoksa Sol mu açılacağını belirterek teklif isteyin.</p>
             </div>
 
             <div class="bg-slate-900 text-white p-8 lg:p-12 rounded-3xl shadow-2xl border border-slate-800">
                 <form action="https://formspree.io/f/xppplwnn" method="POST" class="space-y-6">
                     
-                    <!-- İletişim Bilgileri -->
+                    <!-- İletişim -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Adınız Soyadınız *</label>
@@ -166,7 +121,7 @@
                         </div>
                     </div>
 
-                    <!-- Ürün ve Malzeme Seçimi -->
+                    <!-- Özellikler -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ürün / Sistem Türü</label>
@@ -213,61 +168,63 @@
                         </div>
                     </div>
 
-                    <!-- MENTEŞE İŞARETLEYİCİ GÖRSEL ŞABLON -->
-                    <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700">
-                        <label class="block text-sm font-bold text-sky-400 uppercase mb-4 text-center">
-                            <i class="fa-solid fa-arrows-split-up-and-left mr-2"></i> Menteşe Yönü ve Delik Planı Şablonu
+                    <!-- MENTEŞE SAĞ / SOL SEÇİM ALANI -->
+                    <div class="p-6 bg-slate-800/90 rounded-2xl border border-slate-700 space-y-4">
+                        <label class="block text-sm font-bold text-sky-400 uppercase text-center mb-2">
+                            <i class="fa-solid fa-door-open mr-2"></i> Menteşe Yönü ve Ölçüsü
                         </label>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                            <!-- Sol: Menteşe Yönü Seçimi -->
-                            <div class="space-y-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Menteşe Hangi Kenarda Olacak?</label>
-                                    <select name="Menteşe Yönü" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm">
-                                        <option value="Sol Kenar">Sol Kenara Monte Edilecek</option>
-                                        <option value="Sağ Kenar">Sağ Kenara Monte Edilecek</option>
-                                        <option value="Çift Kapak / Ortadan">Çift Kapak (Ortadan Buluşmalı)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Menteşe / Delik Adedi</label>
-                                    <select name="Menteşe Adedi" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm">
-                                        <option value="2 Adet Menteşe">2 Adet Menteşe (Standart Kısa Kapak)</option>
-                                        <option value="3 Adet Menteşe" selected>3 Adet Menteşe (Önerilen - Orta Boy)</option>
-                                        <option value="4 Adet Menteşe">4 Adet Menteşe (Uzun Boy Kapak)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Özel Menteşe Yeri / Ölçü Notu</label>
-                                    <input type="text" name="Menteşe Ölçü Detayı" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm" placeholder="Örn: Üstten 10cm, alttan 10cm, ortaya 1 adet...">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- SAĞ / SOL MENTEŞE SEÇİMİ -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Menteşe Yönü Seçimi *</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="flex items-center justify-center p-4 bg-slate-900 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-sky-500 transition group">
+                                        <input type="radio" name="Mentese_Yonu" value="SOL MENTEŞE (Sol Taraf)" checked class="hidden peer">
+                                        <div class="text-center peer-checked:text-sky-400">
+                                            <i class="fa-solid fa-arrow-left text-xl mb-1 block"></i>
+                                            <span class="font-bold text-sm block">SOL MENTEŞE</span>
+                                            <span class="text-[10px] text-slate-400 block">Kapak Sola Açılır</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="flex items-center justify-center p-4 bg-slate-900 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-sky-500 transition group">
+                                        <input type="radio" name="Mentese_Yonu" value="SAĞ MENTEŞE (Sağ Taraf)" class="hidden peer">
+                                        <div class="text-center peer-checked:text-sky-400">
+                                            <i class="fa-solid fa-arrow-right text-xl mb-1 block"></i>
+                                            <span class="font-bold text-sm block">SAĞ MENTEŞE</span>
+                                            <span class="text-[10px] text-slate-400 block">Kapak Sağa Açılır</span>
+                                        </div>
+                                    </label>
                                 </div>
                             </div>
 
-                            <!-- Sağ: Görsel Kapak Şablonu -->
-                            <div class="flex flex-col items-center justify-center bg-slate-950 p-6 rounded-xl border border-slate-800 text-center relative h-64">
-                                <div class="text-xs text-slate-400 absolute top-3">Kapak Ön Görünümü (Şematik)</div>
-                                <!-- Kapak Temsili Çerçeve -->
-                                <div class="w-28 h-48 border-2 border-dashed border-sky-500/60 rounded-lg relative flex flex-col justify-between p-2 bg-slate-900/50">
-                                    <span class="text-[10px] text-sky-300">ÜST</span>
-                                    <!-- Menteşe Noktaları Temsili -->
-                                    <div class="absolute left-0 top-3 w-3 h-3 bg-sky-400 rounded-full shadow-lg animate-pulse" title="Menteşe 1"></div>
-                                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-sky-400 rounded-full shadow-lg animate-pulse" title="Menteşe 2"></div>
-                                    <div class="absolute left-0 bottom-3 w-3 h-3 bg-sky-400 rounded-full shadow-lg animate-pulse" title="Menteşe 3"></div>
-                                    <span class="text-[10px] text-sky-300">ALT</span>
+                            <!-- MENTEŞE DELİK ÖLÇÜLERİ -->
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Menteşe Adedi</label>
+                                    <select name="Mentese_Adedi" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm">
+                                        <option value="2 Adet Menteşe">2 Adet Menteşe</option>
+                                        <option value="3 Adet Menteşe" selected>3 Adet Menteşe</option>
+                                        <option value="4 Adet Menteşe">4 Adet Menteşe</option>
+                                    </select>
                                 </div>
-                                <div class="text-[11px] text-slate-400 mt-3">Mavi noktalar seçilen menteşe yerleşim yerlerini temsil eder.</div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Delik Mesafesi (Opsiyonel)</label>
+                                    <input type="text" name="Mentese_Mesafe_Notu" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm" placeholder="Örn: Üstten 10 cm, alttan 10 cm...">
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ek Açıklama veya Diğer Ölçüleriniz</label>
-                        <textarea name="Ek Aciklama" rows="3" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Birden fazla kapak ölçüsü veya ek detaylar varsa buraya yazabilirsiniz..."></textarea>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ek Açıklama</label>
+                        <textarea name="Ek Aciklama" rows="2" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 text-sm" placeholder="Varsa ek isteklerinizi buraya yazabilirsiniz..."></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-sky-600/30 text-base">
-                        Menteşe Planı ile Birlikte Fiyat Teklifi İste
+                        Fiyat Teklifi İste
                     </button>
                 </form>
             </div>
@@ -278,7 +235,6 @@
     <section id="contact" class="py-20 bg-slate-50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6 text-center max-w-2xl">
             <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Doğrudan İletişim</h2>
-            <p class="text-slate-600 text-sm mb-8">Ankara Altındağ imalat merkezimizle doğrudan telefon veya e-posta yoluyla da görüşebilirsiniz.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-6 text-sm font-semibold text-slate-700">
                 <span><i class="fa-solid fa-phone text-sky-600 mr-2"></i>+90 (312) 351 63 95</span>
                 <span><i class="fa-solid fa-envelope text-sky-600 mr-2"></i>info@atakray.com</span>
@@ -289,28 +245,15 @@
 
     <!-- Footer -->
     <footer class="bg-slate-950 text-slate-500 py-8 border-t border-slate-900 text-center text-sm">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div>&copy; 2026 Atakray Alüminyum Sanayi. Tüm hakları saklıdır.</div>
-            <div class="flex space-x-6">
-                <a href="#home" class="hover:text-slate-400 transition">Ana Sayfa</a>
-                <a href="#about" class="hover:text-slate-400 transition">Hakkımızda</a>
-                <a href="#gallery" class="hover:text-slate-400 transition">Galeri</a>
-                <a href="#options" class="hover:text-slate-400 transition">Renk & Camlar</a>
-                <a href="#calculator" class="hover:text-slate-400 transition">Ölçü Ver</a>
-                <a href="#contact" class="hover:text-slate-400 transition">İletişim</a>
-            </div>
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
     <script>
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('mobile-menu');
-
-        function toggleMenu() {
-            menu.classList.toggle('hidden');
-        }
-
+        function toggleMenu() { menu.classList.toggle('hidden'); }
         btn.addEventListener('click', toggleMenu);
     </script>
 </body>
