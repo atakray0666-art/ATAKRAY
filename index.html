@@ -161,18 +161,18 @@
                 <p class="text-zinc-400">Alüminyum çerçeve kapak, sürgü sistemleri, özel profiller ve imalat görsellerimiz.</p>
             </div>
 
-            <!-- OTURUM AÇMA / YÖNETİCİ GİRİŞİ PANELİ -->
+            <!-- OTURUM AÇMA / YÖNETİCİ GİRİŞİ PANELİ (ŞİFRE GİZLİ) -->
             <div class="max-w-xl mx-auto mb-16 bg-zinc-950 p-6 rounded-2xl border border-amber-500/30 shadow-xl">
                 <div class="flex items-center justify-between mb-4">
                     <span class="text-sm font-bold text-amber-400 flex items-center">
                         <i class="fa-solid fa-lock mr-2"></i> Yönetici / Oturum Açma Paneli
                     </span>
-                    <span id="login-status" class="text-xs text-zinc-500">Kilitli (Şifre: 1948ATAK)</span>
+                    <span id="login-status" class="text-xs text-zinc-500">Kilitli</span>
                 </div>
 
                 <!-- Giriş Formu -->
                 <div id="login-box" class="flex gap-3">
-                    <input type="password" id="admin-pass" placeholder="Yönetici Şifresi" class="flex-1 bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none">
+                    <input type="password" id="admin-pass" placeholder="Yönetici Şifrenizi Girin" class="flex-1 bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none">
                     <button onclick="checkLogin()" class="bg-amber-500 hover:bg-amber-400 text-black font-bold px-6 py-2.5 rounded-xl text-sm transition shadow-md shadow-amber-500/20">
                         Oturum Aç
                     </button>
@@ -209,7 +209,7 @@
                 </div>
             </div>
 
-            <!-- GALERİ GRİDİ (Kalıcı yüklenenler buraya eklenecek) -->
+            <!-- GALERİ GRİDİ -->
             <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 1. Fotoğraf -->
                 <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
@@ -489,15 +489,15 @@
             document.getElementById('login-box').classList.remove('hidden');
             document.getElementById('upload-box').classList.add('hidden');
             document.getElementById('admin-pass').value = "";
-            document.getElementById('login-status').innerText = "Kilitli (Şifre: 1948ATAK)";
+            document.getElementById('login-status').innerText = "Kilitli";
             document.getElementById('login-status').className = "text-xs text-zinc-500";
         }
 
         // YENİ FOTOĞRAFI KAYDETME VE GALERİYE EKLEME
         function addNewPhoto() {
             const fileInput = document.getElementById('new-img-file');
-            const titleInput = document.getElementById('new-img-title').value || "Atakray Özel İmalat";
-            const descInput = document.getElementById('new-img-desc').value || "Yüksek kalite alüminyum profil ve cam uygulaması.";
+            const titleInput = document.getElementById('new-img-title').value.trim() || "Atakray Özel İmalat";
+            const descInput = document.getElementById('new-img-desc').value.trim() || "Yüksek kalite alüminyum profil ve cam uygulaması.";
 
             if (fileInput.files && fileInput.files[0]) {
                 const reader = new FileReader();
@@ -532,16 +532,15 @@
         function loadSavedPhotos() {
             const grid = document.getElementById('gallery-grid');
             
-            // Sabit 3 örnek fotoğraf korunarak sonradan eklenenler üstüne eklenir
+            // Daha önce eklenmiş dinamik kartları temizle (statik ilk 3 haricindekileri kaldır)
+            const existingDynamicCards = grid.querySelectorAll('.dynamic-card');
+            existingDynamicCards.forEach(card => card.remove());
+
             let savedPhotos = JSON.parse(localStorage.getItem('atakray_gallery')) || [];
             
-            // Mevcut dinamik eklenenleri temizle (sabit ilk 3'ü bırak)
-            const defaultCards = grid.querySelectorAll('.default-card');
-            
-            // Eğer özel eklenenler varsa galeriye bas
             savedPhotos.forEach(item => {
                 const card = document.createElement('div');
-                card.className = "bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group";
+                card.className = "bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group dynamic-card";
                 card.innerHTML = `
                     <div class="h-80 overflow-hidden bg-black">
                         <img src="${item.imgSrc}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -551,7 +550,7 @@
                         <p class="text-xs text-zinc-400 mt-1">${item.desc}</p>
                     </div>
                 `;
-                grid.prepend(card);
+                grid.prepend(card); // En üste ekle
             });
         }
 
