@@ -152,17 +152,100 @@
         </div>
     </section>
 
-    <!-- Ürünler ve Uygulama Galerisi -->
+    <!-- Ürünler ve Uygulama Galerisi + YÖNETİCİ GİRİŞİ PANELİ -->
     <section id="gallery" class="py-24 bg-black border-b border-amber-500/10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
+            <div class="text-center max-w-2xl mx-auto mb-12">
                 <span class="text-amber-400 font-bold uppercase tracking-wider text-xs">İmalat & Ürünlerimiz</span>
                 <h2 class="text-3xl lg:text-4xl font-extrabold text-white mt-2 mb-4">Ürün Ve Uygulama Galerisi</h2>
-                <p class="text-zinc-400">Alüminyum çerçeve kapak, sürgü sistemleri, özel profiller ve mekanizma çözümlerimiz.</p>
+                <p class="text-zinc-400">Alüminyum çerçeve kapak, sürgü sistemleri, özel profiller ve imalat görsellerimiz.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 1. Fotoğraf -->
+            <!-- OTURUM AÇMA / YÖNETİCİ GİRİŞİ PANELİ (ŞİFRE GİZLİ) -->
+            <div class="max-w-xl mx-auto mb-16 bg-zinc-950 p-6 rounded-2xl border border-amber-500/30 shadow-xl">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-sm font-bold text-amber-400 flex items-center">
+                        <i class="fa-solid fa-lock mr-2"></i> Yönetici / Oturum Açma Paneli
+                    </span>
+                    <span id="login-status" class="text-xs text-zinc-500">Kilitli</span>
+                </div>
+
+                <!-- Giriş Formu -->
+                <div id="login-box" class="flex gap-3">
+                    <input type="password" id="admin-pass" placeholder="Yönetici Şifrenizi Girin" class="flex-1 bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none">
+                    <button onclick="checkLogin()" class="bg-amber-500 hover:bg-amber-400 text-black font-bold px-6 py-2.5 rounded-xl text-sm transition shadow-md shadow-amber-500/20">
+                        Oturum Aç
+                    </button>
+                </div>
+
+                <!-- YÜKLEME FORMU -->
+                <div id="upload-box" class="hidden space-y-4 pt-4 border-t border-zinc-800 mt-4">
+                    <div class="text-xs text-emerald-400 font-semibold mb-2"><i class="fa-solid fa-circle-check mr-1"></i> Oturum Açıldı! Fotoğraf yükleyebilirsiniz.</div>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-300 uppercase mb-1">Fotoğraf Dosyası Seçin</label>
+                        <input type="file" id="new-img-file" accept="image/*" class="w-full text-xs text-zinc-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 file:cursor-pointer">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 uppercase mb-1">Fotoğraf Başlığı</label>
+                            <input type="text" id="new-img-title" placeholder="Örn: Füme Camlı Menteşe Kapak" class="w-full bg-black border border-zinc-800 rounded-xl px-3 py-2 text-white text-sm focus:outline-none focus:border-amber-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 uppercase mb-1">Açıklama</label>
+                            <input type="text" id="new-img-desc" placeholder="Örn: Mat siyah alüminyum profil..." class="w-full bg-black border border-zinc-800 rounded-xl px-3 py-2 text-white text-sm focus:outline-none focus:border-amber-400">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center pt-2">
+                        <button onclick="addNewPhoto()" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold px-6 py-2.5 rounded-xl text-xs transition shadow-md shadow-amber-500/20">
+                            <i class="fa-solid fa-upload mr-1.5"></i> Kaydet & Galeriye Ekle
+                        </button>
+                        <button onclick="logoutAdmin()" class="text-xs text-zinc-400 hover:text-red-400 transition underline">
+                            Oturumu Kapat
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GALERİ GRİDİ (YENİ ATAK4, ATAK5, ATAK6 GÖRSELLERİ DAHİL) -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- YENİ ATAK 4: Aynalı Bölmeli Sürgü Kapak -->
+                <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
+                    <div class="h-80 overflow-hidden bg-black">
+                        <img src="ATAK4.jpg" alt="Atakray Aynalı Sürgü Kapak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-amber-400 text-base">Aynalı ve Bölmeli Sürgü Kapak</h3>
+                        <p class="text-xs text-zinc-400 mt-1">Özel ölçü siyah çerçeveli modern sürgü dolap kapak sistemi[cite: 1].</p>
+                    </div>
+                </div>
+
+                <!-- YENİ ATAK 5: Gold Profil & Çizgili Cam Kapak -->
+                <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
+                    <div class="h-80 overflow-hidden bg-black">
+                        <img src="ATAK5.jpg" alt="Atakray Gold Profil Çizgili Cam Kapak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-amber-400 text-base">Gold Profil & Çizgili Cam Sistem</h3>
+                        <p class="text-xs text-zinc-400 mt-1">Gold sarı profil detaylı, şık çizgili cam dolap kapak imalatı[cite: 2].</p>
+                    </div>
+                </div>
+
+                <!-- YENİ ATAK 6: Alüminyum Çerçeve ve Profil Deposu -->
+                <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
+                    <div class="h-80 overflow-hidden bg-black">
+                        <img src="ATAK6.jpg" alt="Atakray Profil İmalat ve Köşe Detayları" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-amber-400 text-base">Alüminyum Çerçeve ve Profil Deposu</h3>
+                        <p class="text-xs text-zinc-400 mt-1">Atölyemizden hazır çerçeve profilleri ve köşe birleşim detayları[cite: 3].</p>
+                    </div>
+                </div>
+
+                <!-- Orijinal ATAK 1 -->
                 <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
                     <div class="h-80 overflow-hidden bg-black">
                         <img src="ATAK1.jpg" alt="Atakray Sürgü Kapak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'">
@@ -173,7 +256,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Fotoğraf -->
+                <!-- Orijinal ATAK 2 -->
                 <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
                     <div class="h-80 overflow-hidden bg-black">
                         <img src="ATAK2.jpg" alt="Atakray İmalathane" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80'">
@@ -184,7 +267,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Fotoğraf -->
+                <!-- Orijinal ATAK 3 -->
                 <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
                     <div class="h-80 overflow-hidden bg-black">
                         <img src="ATAK3.jpg" alt="Atakray Cam Aksesuar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'">
@@ -194,6 +277,7 @@
                         <p class="text-xs text-zinc-400 mt-1">Özel desenli kapaklar, köşe bağlantı elemanları ve sürgü donanımları.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -406,13 +490,100 @@
         </div>
     </footer>
 
-    <!-- SCRIPT: CANLI MENTEŞE, KULP, PROFİL RENGI VE CAM EFEKTLERİ -->
+    <!-- SCRIPT: YÖNETİCİ GİRİŞİ, YÜKLEME VE DİNAMİK KAPAK ÖNİZLEMESİ -->
     <script>
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('mobile-menu');
         function toggleMenu() { menu.classList.toggle('hidden'); }
         btn.addEventListener('click', toggleMenu);
 
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSavedPhotos();
+            updateHingeView();
+        });
+
+        // OTURUM AÇMA KONTROLÜ (Şifre: 1948ATAK)
+        function checkLogin() {
+            const pass = document.getElementById('admin-pass').value;
+            const loginBox = document.getElementById('login-box');
+            const uploadBox = document.getElementById('upload-box');
+            const status = document.getElementById('login-status');
+
+            if (pass === "1948ATAK") {
+                loginBox.classList.add('hidden');
+                uploadBox.classList.remove('hidden');
+                status.innerText = "Oturum Açık (Yönetici)";
+                status.className = "text-xs text-emerald-400 font-semibold";
+            } else {
+                alert("Hatalı şifre!");
+            }
+        }
+
+        function logoutAdmin() {
+            document.getElementById('login-box').classList.remove('hidden');
+            document.getElementById('upload-box').classList.add('hidden');
+            document.getElementById('admin-pass').value = "";
+            document.getElementById('login-status').innerText = "Kilitli";
+            document.getElementById('login-status').className = "text-xs text-zinc-500";
+        }
+
+        // YENİ FOTOĞRAFI KAYDETME VE GALERİYE EKLEME
+        function addNewPhoto() {
+            const fileInput = document.getElementById('new-img-file');
+            const titleInput = document.getElementById('new-img-title').value.trim() || "Atakray Özel İmalat";
+            const descInput = document.getElementById('new-img-desc').value.trim() || "Yüksek kalite alüminyum profil ve cam uygulaması.";
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgData = {
+                        imgSrc: e.target.result,
+                        title: titleInput,
+                        desc: descInput
+                    };
+
+                    let savedPhotos = JSON.parse(localStorage.getItem('atakray_gallery')) || [];
+                    savedPhotos.unshift(imgData);
+                    localStorage.setItem('atakray_gallery', JSON.stringify(savedPhotos));
+
+                    loadSavedPhotos();
+
+                    fileInput.value = "";
+                    document.getElementById('new-img-title').value = "";
+                    document.getElementById('new-img-desc').value = "";
+                    alert("Fotoğraf başarıyla galeriye eklendi!");
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                alert("Lütfen yüklenecek bir fotoğraf seçin.");
+            }
+        }
+
+        // Kayıtlı Fotoğrafları Galeride Gösterme
+        function loadSavedPhotos() {
+            const grid = document.getElementById('gallery-grid');
+            const existingDynamicCards = grid.querySelectorAll('.dynamic-card');
+            existingDynamicCards.forEach(card => card.remove());
+
+            let savedPhotos = JSON.parse(localStorage.getItem('atakray_gallery')) || [];
+            
+            savedPhotos.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group dynamic-card";
+                card.innerHTML = `
+                    <div class="h-80 overflow-hidden bg-black">
+                        <img src="${item.imgSrc}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-amber-400 text-base">${item.title}</h3>
+                        <p class="text-xs text-zinc-400 mt-1">${item.desc}</p>
+                    </div>
+                `;
+                grid.prepend(card);
+            });
+        }
+
+        // Canlı Kapak Önizleme Simgeleri
         function updateHingeView() {
             const selectedSide = document.querySelector('input[name="Mentese_Yonu"]:checked').value;
             const count = parseInt(document.getElementById('select-adet').value);
@@ -430,7 +601,6 @@
             const doorPreview = document.getElementById('door-preview');
             const glassOverlay = document.getElementById('glass-overlay');
 
-            // Menteşe Yönü Görsel Aktifliği ve Kulp Konumu
             if (isLeft) {
                 lblSol.className = "flex items-center justify-center p-4 bg-black border-2 border-amber-400 rounded-xl cursor-pointer hover:border-amber-300 transition group";
                 lblSag.className = "flex items-center justify-center p-4 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer hover:border-amber-400 transition group";
@@ -447,7 +617,6 @@
                 handle.className = "absolute left-1 top-1/2 -translate-y-1/2 w-1.5 h-12 rounded-full shadow z-20";
             }
 
-            // Profil Rengine Göre Çerçeve (Border) ve Kulp Görsel Stil Tanımları
             let profilBorderClass = "border-amber-400 ring-2 ring-amber-400/30";
             let handleColorClass = "bg-amber-300 border border-amber-500 shadow-amber-400/50 shadow-md";
 
@@ -472,12 +641,11 @@
                     profilBorderClass = "border-amber-500";
                     handleColorClass = "bg-amber-500 border border-amber-700";
                     break;
-                default: // Mat Eloksal (Gri)
+                default:
                     profilBorderClass = "border-zinc-400";
                     handleColorClass = "bg-zinc-300 border border-zinc-500";
             }
 
-            // Cam Türüne Göre Arka Plan ve Yansıma Efektleri
             let glassBgClass = "bg-zinc-950";
             let glassOverlayClass = "bg-gradient-to-tr from-zinc-800/60 via-zinc-500/20 to-amber-400/20";
 
@@ -512,15 +680,12 @@
                     break;
             }
 
-            // Sınıfları Birleştir ve Uygula
             doorPreview.className = `w-32 h-56 border-[5px] ${profilBorderClass} rounded-sm relative shadow-2xl flex flex-col justify-between p-1 transition-all duration-300 ${glassBgClass}`;
             glassOverlay.className = `absolute inset-0 ${glassOverlayClass} pointer-events-none transition-all duration-300`;
             handle.className = `absolute ${isLeft ? 'right-1' : 'left-1'} top-1/2 -translate-y-1/2 w-1.5 h-12 ${handleColorClass} rounded-full z-20`;
 
-            // Menteşe Yerleşim Çizimi
             let html = "";
             const sideClass = isLeft ? "-left-3" : "-right-3";
-
             const hingeElement = `
                 <div class="absolute ${sideClass} w-5 h-7 bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 rounded-sm border border-amber-700 shadow-xl flex items-center justify-center z-20">
                     <div class="w-2 h-2 bg-black rounded-full border border-amber-300"></div>
@@ -543,8 +708,6 @@
 
             container.innerHTML = html;
         }
-
-        window.onload = updateHingeView;
     </script>
 </body>
 </html>
