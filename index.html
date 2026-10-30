@@ -27,7 +27,7 @@
         }
     </script>
     <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-fontawesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-black text-amber-100/90 antialiased selection:bg-amber-500 selection:text-black relative">
 
@@ -172,7 +172,7 @@
 
                 <!-- Giriş Formu -->
                 <div id="login-box" class="flex gap-3">
-                    <input type="password" id="admin-pass" placeholder="Yönetici Şifresi (Örn: 1453)" class="flex-1 bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none">
+                    <input type="password" id="admin-pass" placeholder="Yönetici Şifresi" class="flex-1 bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none">
                     <button onclick="checkLogin()" class="bg-amber-500 hover:bg-amber-400 text-black font-bold px-6 py-2.5 rounded-xl text-sm transition shadow-md shadow-amber-500/20">
                         Oturum Aç
                     </button>
@@ -462,20 +462,20 @@
         function toggleMenu() { menu.classList.toggle('hidden'); }
         btn.addEventListener('click', toggleMenu);
 
-        // OTURUM AÇMA KONTROLÜ (Şifre: 1453)
+        // OTURUM AÇMA KONTROLÜ (Şifre: 1948ATAK)
         function checkLogin() {
             const pass = document.getElementById('admin-pass').value;
             const loginBox = document.getElementById('login-box');
             const uploadBox = document.getElementById('upload-box');
             const status = document.getElementById('login-status');
 
-            if (pass === "1453") {
+            if (pass === "1948ATAK") {
                 loginBox.classList.add('hidden');
                 uploadBox.classList.remove('hidden');
                 status.innerText = "Oturum Açık (Yönetici)";
                 status.className = "text-xs text-emerald-400 font-semibold";
             } else {
-                alert("Hatalı şifre! (Örnek şifre: 1453)");
+                alert("Hatalı şifre!");
             }
         }
 
