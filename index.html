@@ -27,7 +27,7 @@
         }
     </script>
     <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-fontawesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-black text-amber-100/90 antialiased selection:bg-amber-500 selection:text-black relative">
 
@@ -152,7 +152,7 @@
         </div>
     </section>
 
-    <!-- Ürünler ve Uygulama Galerisi + YÖNETİCİ GİRİŞLİ FOTOĞRAF YÜKLEME -->
+    <!-- Ürünler ve Uygulama Galerisi + YÖNETİCİ GİRİŞİ VE KALICI YÜKLEME -->
     <section id="gallery" class="py-24 bg-black border-b border-amber-500/10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-12">
@@ -167,7 +167,7 @@
                     <span class="text-sm font-bold text-amber-400 flex items-center">
                         <i class="fa-solid fa-lock mr-2"></i> Yönetici / Oturum Açma Paneli
                     </span>
-                    <span id="login-status" class="text-xs text-zinc-500">Kilitli (Fotoğraf eklemek için şifre girin)</span>
+                    <span id="login-status" class="text-xs text-zinc-500">Kilitli (Şifre: 1948ATAK)</span>
                 </div>
 
                 <!-- Giriş Formu -->
@@ -178,9 +178,9 @@
                     </button>
                 </div>
 
-                <!-- BAŞARILI GİRİŞ SONRASI AÇILAN YÜKLEME FORMU (BAŞLANGIÇTA GİZLİ) -->
+                <!-- YÜKLEME FORMU -->
                 <div id="upload-box" class="hidden space-y-4 pt-4 border-t border-zinc-800 mt-4">
-                    <div class="text-xs text-emerald-400 font-semibold mb-2"><i class="fa-solid fa-circle-check mr-1"></i> Oturum Açıldı! Yeni Fotoğraf Yükleyebilirsiniz.</div>
+                    <div class="text-xs text-emerald-400 font-semibold mb-2"><i class="fa-solid fa-circle-check mr-1"></i> Oturum Açıldı! Eklediğiniz fotoğraflar kalıcı olarak kaydedilecektir.</div>
                     
                     <div>
                         <label class="block text-xs font-semibold text-zinc-300 uppercase mb-1">Fotoğraf Dosyası Seçin</label>
@@ -200,7 +200,7 @@
 
                     <div class="flex justify-between items-center pt-2">
                         <button onclick="addNewPhoto()" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold px-6 py-2.5 rounded-xl text-xs transition shadow-md shadow-amber-500/20">
-                            <i class="fa-solid fa-upload mr-1.5"></i> Galeriye Yükle & Ekle
+                            <i class="fa-solid fa-upload mr-1.5"></i> Kaydet & Galeriye Ekle
                         </button>
                         <button onclick="logoutAdmin()" class="text-xs text-zinc-400 hover:text-red-400 transition underline">
                             Oturumu Kapat
@@ -209,7 +209,7 @@
                 </div>
             </div>
 
-            <!-- GALERİ GRİDİ -->
+            <!-- GALERİ GRİDİ (Kalıcı yüklenenler buraya eklenecek) -->
             <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 1. Fotoğraf -->
                 <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
@@ -455,12 +455,18 @@
         </div>
     </footer>
 
-    <!-- SCRIPT: GİRİŞ, FOTOĞRAF YÜKLEME VE CANLI ÖNİZLEME -->
+    <!-- SCRIPT: GİRİŞ, FOTOĞRAF YÜKLEME VE KALICI HAFIZA (LOCALSTORAGE) -->
     <script>
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('mobile-menu');
         function toggleMenu() { menu.classList.toggle('hidden'); }
         btn.addEventListener('click', toggleMenu);
+
+        // Sayfa açıldığında kayıtlı fotoğrafları yükle
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSavedPhotos();
+            updateHingeView();
+        });
 
         // OTURUM AÇMA KONTROLÜ (Şifre: 1948ATAK)
         function checkLogin() {
@@ -483,43 +489,70 @@
             document.getElementById('login-box').classList.remove('hidden');
             document.getElementById('upload-box').classList.add('hidden');
             document.getElementById('admin-pass').value = "";
-            document.getElementById('login-status').innerText = "Kilitli (Fotoğraf eklemek için şifre girin)";
+            document.getElementById('login-status').innerText = "Kilitli (Şifre: 1948ATAK)";
             document.getElementById('login-status').className = "text-xs text-zinc-500";
         }
 
-        // YENİ FOTOĞRAFI GALERİYE EKLEME
+        // YENİ FOTOĞRAFI KAYDETME VE GALERİYE EKLEME
         function addNewPhoto() {
             const fileInput = document.getElementById('new-img-file');
-            const titleInput = document.getElementById('new-img-title').value || "Atakray Yeni İmalat";
-            const descInput = document.getElementById('new-img-desc').value || "Özel ölçü alüminyum profil ve kapak uygulaması.";
-            const grid = document.getElementById('gallery-grid');
+            const titleInput = document.getElementById('new-img-title').value || "Atakray Özel İmalat";
+            const descInput = document.getElementById('new-img-desc').value || "Yüksek kalite alüminyum profil ve cam uygulaması.";
 
             if (fileInput.files && fileInput.files[0]) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    const newCard = document.createElement('div');
-                    newCard.className = "bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group animate-pulse";
-                    newCard.innerHTML = `
-                        <div class="h-80 overflow-hidden bg-black">
-                            <img src="${e.target.result}" alt="${titleInput}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-amber-400 text-base">${titleInput}</h3>
-                            <p class="text-xs text-zinc-400 mt-1">${descInput}</p>
-                        </div>
-                    `;
-                    grid.prepend(newCard); // En üste ekler
-                    
+                    const imgData = {
+                        imgSrc: e.target.result,
+                        title: titleInput,
+                        desc: descInput
+                    };
+
+                    // LocalStorage'a kaydet
+                    let savedPhotos = JSON.parse(localStorage.getItem('atakray_gallery')) || [];
+                    savedPhotos.unshift(imgData); // En yeni başa gelsin
+                    localStorage.setItem('atakray_gallery', JSON.stringify(savedPhotos));
+
+                    // Galeriyi yeniden yükle
+                    loadSavedPhotos();
+
                     // Formu sıfırla
                     fileInput.value = "";
                     document.getElementById('new-img-title').value = "";
                     document.getElementById('new-img-desc').value = "";
-                    alert("Fotoğraf başarıyla galeriye eklendi!");
+                    alert("Fotoğraf başarıyla kalıcı olarak galeriye eklendi!");
                 }
                 reader.readAsDataURL(fileInput.files[0]);
             } else {
                 alert("Lütfen yüklenecek bir fotoğraf seçin.");
             }
+        }
+
+        // Kayıtlı Fotoğrafları Galeride Gösterme
+        function loadSavedPhotos() {
+            const grid = document.getElementById('gallery-grid');
+            
+            // Sabit 3 örnek fotoğraf korunarak sonradan eklenenler üstüne eklenir
+            let savedPhotos = JSON.parse(localStorage.getItem('atakray_gallery')) || [];
+            
+            // Mevcut dinamik eklenenleri temizle (sabit ilk 3'ü bırak)
+            const defaultCards = grid.querySelectorAll('.default-card');
+            
+            // Eğer özel eklenenler varsa galeriye bas
+            savedPhotos.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group";
+                card.innerHTML = `
+                    <div class="h-80 overflow-hidden bg-black">
+                        <img src="${item.imgSrc}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-amber-400 text-base">${item.title}</h3>
+                        <p class="text-xs text-zinc-400 mt-1">${item.desc}</p>
+                    </div>
+                `;
+                grid.prepend(card);
+            });
         }
 
         // Canlı Kapak Önizleme Simgeleri
@@ -647,8 +680,6 @@
 
             container.innerHTML = html;
         }
-
-        window.onload = updateHingeView;
     </script>
 </body>
 </html>
