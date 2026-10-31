@@ -95,10 +95,10 @@
                     <i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i> Önder, Ereğli Cd. No:39 Altındağ (Adrese Git)
                 </a>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                    Ölçünüzü ve <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-600">Cam / Profil Seçiminizi</span> Yapın
+                    Hassas Ölçü ve <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-600">Teklif Sistemi</span>
                 </h1>
                 <p class="text-lg text-zinc-400 mb-8 font-light leading-relaxed">
-                    İstediğiniz cam türünü ve profil rengini seçerek kapak tasarımını anında canlı önizleme ekranında görün.
+                    Buçuklu ve ondalıklı ölçülerinizi (Örn: 45.5 cm) girerek hassas kapak ve profil teklifi oluşturabilirsiniz.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#calculator" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black text-center px-8 py-4 rounded-xl font-bold shadow-lg shadow-amber-500/20 transition duration-300">
@@ -164,7 +164,7 @@
             <!-- GALERİ GRİDİ -->
             <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- ATAK 4[cite: 1] -->
+                <!-- ATAK 4 -->
                 <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
                     <div class="h-80 overflow-hidden bg-black">
                         <img src="ATAK4.jpg" alt="Atakray Aynalı Sürgü Kapak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'">
@@ -175,7 +175,7 @@
                     </div>
                 </div>
 
-                <!-- ATAK 5[cite: 2] -->
+                <!-- ATAK 5 -->
                 <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
                     <div class="h-80 overflow-hidden bg-black">
                         <img src="ATAK5.jpg" alt="Atakray Gold Profil Çizgili Cam Kapak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80'">
@@ -186,7 +186,7 @@
                     </div>
                 </div>
 
-                <!-- ATAK 6[cite: 3] -->
+                <!-- ATAK 6 -->
                 <div class="bg-zinc-950 rounded-2xl overflow-hidden shadow-xl border border-amber-500/20 group">
                     <div class="h-80 overflow-hidden bg-black">
                         <img src="ATAK6.jpg" alt="Atakray Profil İmalat ve Köşe Detayları" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'">
@@ -239,8 +239,8 @@
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="text-amber-400 font-bold uppercase tracking-wider text-xs">Sipariş & Teklif Formu</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-white mt-2 mb-4">Cam ve Profil Önizleme Sistemi</h2>
-                <p class="text-zinc-400 text-sm">Seçtiğiniz cam türü ve profil rengi canlı kapak önizlemesinde anında güncellenir.</p>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-white mt-2 mb-4">Hassas Ölçü ve Teklif Formu</h2>
+                <p class="text-zinc-400 text-sm">Genişlik ve yükseklik alanlarına buçuklu (ondalıklı) değerler girebilirsiniz.</p>
             </div>
 
             <div class="bg-black text-white p-8 lg:p-12 rounded-3xl shadow-2xl border border-amber-500/30">
@@ -293,15 +293,15 @@
                         </div>
                     </div>
 
-                    <!-- Ölçüler -->
+                    <!-- ÖLÇÜLER (BUÇUKLU/ONDALIKLI GİRİŞE UYUMLU: step="0.1") -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 bg-zinc-900/60 rounded-2xl border border-amber-500/20">
                         <div>
                             <label class="block text-xs font-semibold text-amber-400 uppercase mb-2">Genişlik (cm)</label>
-                            <input type="number" name="Genislik" required class="w-full bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-3 text-white focus:outline-none text-sm transition" placeholder="Örn: 50">
+                            <input type="number" step="0.1" min="0" name="Genislik" required class="w-full bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-3 text-white focus:outline-none text-sm transition" placeholder="Örn: 49.5">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-amber-400 uppercase mb-2">Yükseklik (cm)</label>
-                            <input type="number" name="Yukseklik" required class="w-full bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-3 text-white focus:outline-none text-sm transition" placeholder="Örn: 180">
+                            <input type="number" step="0.1" min="0" name="Yukseklik" required class="w-full bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-3 text-white focus:outline-none text-sm transition" placeholder="Örn: 179.5">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-amber-400 uppercase mb-2">Adet</label>
@@ -309,7 +309,7 @@
                         </div>
                     </div>
 
-                    <!-- KAPAK DÜZENİ VE CANLI CAM ÖNİZLEME -->
+                    <!-- MENTEŞE YÖNÜ VE CANLI ÖNİZLEME -->
                     <div class="p-6 bg-zinc-950 rounded-2xl border border-amber-500/30 space-y-4">
                         <label class="block text-sm font-bold text-amber-400 uppercase text-center mb-2">
                             <i class="fa-solid fa-eye mr-2"></i> Canlı Cam ve Profil Önizleme Ekranı
@@ -375,7 +375,7 @@
                                         <div id="handle-left" class="absolute right-1 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-amber-300 border border-amber-500 rounded-full z-20 shadow-md"></div>
                                     </div>
 
-                                    <!-- SAĞ KAPAK (Çift Kapak Modu) -->
+                                    <!-- SAĞ KAPAK -->
                                     <div id="door-right" class="w-28 h-56 border-[5px] border-amber-400 rounded-sm relative shadow-2xl flex flex-col justify-between p-1 bg-zinc-900 transition-all duration-300 overflow-hidden hidden">
                                         <div id="glass-layer-right" class="absolute inset-0 bg-gradient-to-tr from-slate-700/60 via-slate-500/30 to-amber-400/20 pointer-events-none transition-all duration-300"></div>
                                         <span class="text-[7px] font-bold text-white/70 z-10 tracking-widest bg-black/40 px-1 rounded self-start">SAĞ</span>
@@ -384,7 +384,6 @@
                                     </div>
                                 </div>
 
-                                <!-- SEÇİLEN CAM VE PROFİL BİLGİ ETİKETİ -->
                                 <div id="badge-preview-info" class="text-[11px] text-amber-300 font-semibold bg-zinc-900/90 border border-amber-500/40 px-4 py-1.5 rounded-xl mt-4 shadow-lg">
                                     Profil: Gold Sarı | Cam: Füme Reflekte
                                 </div>
@@ -450,7 +449,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT: CANLI CAM VE PROFİL EFEKTİ GÜNCELLEMESİ -->
+    <!-- SCRIPT -->
     <script>
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('mobile-menu');
@@ -484,7 +483,6 @@
             const handleLeft = document.getElementById('handle-left');
             const handleRight = document.getElementById('handle-right');
 
-            // 1. Profil Rengi Sınıfı
             let profilBorderClass = "border-amber-400 ring-2 ring-amber-400/30";
             let handleColorClass = "bg-amber-300 border border-amber-500";
 
@@ -514,7 +512,6 @@
                     handleColorClass = "bg-zinc-300 border border-zinc-500";
             }
 
-            // 2. Cam / Dolgu Tipi Efekti
             let glassBg = "bg-zinc-950";
             let glassOverlay = "bg-gradient-to-tr from-slate-700/60 via-slate-500/30 to-amber-400/20";
 
