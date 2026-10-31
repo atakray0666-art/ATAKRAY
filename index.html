@@ -152,7 +152,7 @@
         </div>
     </section>
 
-    <!-- Ürünler ve Uygulama Galerisi (Şifre Alanı Olmadan, Herkesin Gördüğü Sabit Galeri) -->
+    <!-- Ürünler ve Uygulama Galerisi -->
     <section id="gallery" class="py-24 bg-black border-b border-amber-500/10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -161,7 +161,7 @@
                 <p class="text-zinc-400">Alüminyum çerçeve kapak, sürgü sistemleri, özel profiller ve imalat görsellerimiz.</p>
             </div>
 
-            <!-- GALERİ GRİDİ (ATAK1 - ATAK6 TÜM FOTOĞRAFLAR) -->
+            <!-- GALERİ GRİDİ -->
             <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- ATAK 4 -->
@@ -240,7 +240,7 @@
             <div class="text-center mb-12">
                 <span class="text-amber-400 font-bold uppercase tracking-wider text-xs">Sipariş & Teklif Formu</span>
                 <h2 class="text-3xl lg:text-4xl font-extrabold text-white mt-2 mb-4">Menteşe Yönü ve Ölçü Formu</h2>
-                <p class="text-zinc-400 text-sm">Seçtiğiniz profil rengi, cam ve menteşe tipi canlı kapak görseli üzerinde anında güncellenir.</p>
+                <p class="text-zinc-400 text-sm">Seçtiğiniz profil rengi, cam ve menteşe ölçüleri canlı kapak çizimi üzerinde anında güncellenir.</p>
             </div>
 
             <div class="bg-black text-white p-8 lg:p-12 rounded-3xl shadow-2xl border border-amber-500/30">
@@ -309,43 +309,46 @@
                         </div>
                     </div>
 
-                    <!-- MENTEŞE YÖNÜ VE GERÇEK KAPAK GÖRÜNÜMLÜ CANLI ÖNİZLEME -->
+                    <!-- MENTEŞE YÖNÜ, ADEDİ VE SERBEST DELİK MESAFESİ (MÜŞTERİ YAZAR) -->
                     <div class="p-6 bg-zinc-950 rounded-2xl border border-amber-500/30 space-y-4">
                         <label class="block text-sm font-bold text-amber-400 uppercase text-center mb-2">
-                            <i class="fa-solid fa-door-open mr-2"></i> Menteşe Yönü Ve Canlı Kapak Önizlemesi
+                            <i class="fa-solid fa-door-open mr-2"></i> Kapak Düzeni ve Menteşe Ölçü Şeması
                         </label>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                             
-                            <!-- SOL: BUTONLAR VE SEÇİMLER -->
+                            <!-- SOL: SEÇENEKLER VE GİRİŞ ALANLARI -->
                             <div class="space-y-4">
                                 <div>
-                                    <label class="block text-xs font-semibold text-amber-200/80 uppercase mb-2">Menteşe Yönü Seçin *</label>
+                                    <label class="block text-xs font-semibold text-amber-200/80 uppercase mb-2">Kapak Tipi Seçin *</label>
                                     <div class="grid grid-cols-2 gap-4">
-                                        <!-- SOL MENTEŞE -->
-                                        <label id="lbl-sol" class="flex items-center justify-center p-4 bg-black border-2 border-amber-400 rounded-xl cursor-pointer hover:border-amber-300 transition group">
-                                            <input type="radio" name="Mentese_Yonu" value="SOL MENTEŞE (Sol Taraf)" checked onchange="updateHingeView()" class="hidden">
-                                            <div class="text-center text-amber-400" id="text-sol">
-                                                <i class="fa-solid fa-arrow-left text-xl mb-1 block"></i>
-                                                <span class="font-bold text-sm block">SOL MENTEŞE</span>
-                                                <span class="text-[10px] text-zinc-400 block">Kapak Sola Açılır</span>
-                                            </div>
+                                        <label id="lbl-tek" class="flex items-center justify-center p-3 bg-black border-2 border-amber-400 rounded-xl cursor-pointer">
+                                            <input type="radio" name="Kapak_Sayisi" value="Tek Kapak" checked onchange="updateHingeView()" class="hidden">
+                                            <span class="text-xs font-bold text-amber-400">TEK KAPAK</span>
                                         </label>
+                                        <label id="lbl-cift" class="flex items-center justify-center p-3 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer">
+                                            <input type="radio" name="Kapak_Sayisi" value="Çift Kapak (Sağlı Sollu)" onchange="updateHingeView()" class="hidden">
+                                            <span class="text-xs font-bold text-zinc-500">ÇİFT KAPAK</span>
+                                        </label>
+                                    </div>
+                                </div>
 
-                                        <!-- SAĞ MENTEŞE -->
-                                        <label id="lbl-sag" class="flex items-center justify-center p-4 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer hover:border-amber-400 transition group">
-                                            <input type="radio" name="Mentese_Yonu" value="SAĞ MENTEŞE (Sağ Taraf)" onchange="updateHingeView()" class="hidden">
-                                            <div class="text-center text-zinc-500" id="text-sag">
-                                                <i class="fa-solid fa-arrow-right text-xl mb-1 block"></i>
-                                                <span class="font-bold text-sm block">SAĞ MENTEŞE</span>
-                                                <span class="text-[10px] text-zinc-500 block">Kapak Sağa Açılır</span>
-                                            </div>
+                                <div id="single-direction-box">
+                                    <label class="block text-xs font-semibold text-amber-200/80 uppercase mb-2">Tek Kapak Menteşe Yönü *</label>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <label id="lbl-sol" class="flex items-center justify-center p-3 bg-black border-2 border-amber-400 rounded-xl cursor-pointer">
+                                            <input type="radio" name="Mentese_Yonu" value="SOL MENTEŞE" checked onchange="updateHingeView()" class="hidden">
+                                            <span class="text-xs font-bold text-amber-400">Sol Menteşe</span>
+                                        </label>
+                                        <label id="lbl-sag" class="flex items-center justify-center p-3 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer">
+                                            <input type="radio" name="Mentese_Yonu" value="SAĞ MENTEŞE" onchange="updateHingeView()" class="hidden">
+                                            <span class="text-xs font-bold text-zinc-500">Sağ Menteşe</span>
                                         </label>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label class="block text-xs font-semibold text-amber-200/80 uppercase mb-1">Menteşe Adedi</label>
+                                    <label class="block text-xs font-semibold text-amber-200/80 uppercase mb-1">Menteşe Adedi (Her Kapak İçin)</label>
                                     <select id="select-adet" name="Mentese_Adedi" onchange="updateHingeView()" class="w-full bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-2.5 text-white text-sm">
                                         <option value="2">2 Adet Menteşe</option>
                                         <option value="3" selected>3 Adet Menteşe</option>
@@ -353,33 +356,39 @@
                                     </select>
                                 </div>
 
+                                <!-- DELİK MESAFESİ (OPSİYONEL) MÜŞTERİ KENDİ YAZAR -->
                                 <div>
                                     <label class="block text-xs font-semibold text-amber-200/80 uppercase mb-1">Delik Mesafesi (Opsiyonel)</label>
-                                    <input type="text" name="Mentese_Mesafe_Notu" class="w-full bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-2.5 text-white text-sm" placeholder="Örn: Üstten 10 cm, alttan 10 cm...">
+                                    <input type="text" id="input-mesafe" name="Mentese_Mesafe_Notu" oninput="updateHingeView()" class="w-full bg-black border border-zinc-800 focus:border-amber-400 rounded-xl px-4 py-2.5 text-white text-sm" placeholder="Örn: Üstten 10 cm, alttan 10 cm...">
                                 </div>
                             </div>
 
-                            <!-- SAĞ: GERÇEK ALÜMİNYUM KAPAK VE CANLI CAM/PROFİL ÖNİZLEMESİ -->
-                            <div class="flex flex-col items-center justify-center bg-black p-6 rounded-2xl border border-zinc-800 text-center relative min-h-[300px]">
-                                <div id="side-indicator-title" class="text-xs font-bold text-amber-400 absolute top-3 tracking-wider">SOL MENTEŞE ALÜMİNYUM KAPAK</div>
+                            <!-- SAĞ: CANLI ÖNİZLEME VE GİRİLEN MESAFENİN GÖSTERİMİ -->
+                            <div class="flex flex-col items-center justify-center bg-black p-6 rounded-2xl border border-zinc-800 text-center relative min-h-[320px]">
+                                <div id="side-indicator-title" class="text-xs font-bold text-amber-400 absolute top-3 tracking-wider">KAPAK VE MENTEŞE ÖLÇÜ ŞEMASI</div>
                                 
-                                <!-- ALÜMİNYUM ÇERÇEVELİ KAPAK MODELİ -->
-                                <div id="door-preview" class="w-32 h-56 border-[5px] border-amber-400 ring-2 ring-amber-400/30 rounded-sm relative shadow-2xl flex flex-col justify-between p-1 transition-all duration-300 bg-black">
-                                    <!-- Cam Efekti Katmanı -->
-                                    <div id="glass-overlay" class="absolute inset-0 bg-gradient-to-tr from-slate-600/55 via-slate-400/30 to-amber-400/20 pointer-events-none transition-all duration-300"></div>
-                                    
-                                    <span class="text-[8px] font-bold text-amber-400/60 z-10 tracking-widest pointer-events-none">ÜST</span>
-                                    
-                                    <!-- MENTEŞELERİN EKLENDİĞİ KONUM ALANI -->
-                                    <div id="hinge-container" class="absolute inset-0 pointer-events-none"></div>
+                                <div id="doors-wrapper" class="flex gap-4 justify-center items-center mt-6 relative">
+                                    <!-- SOL KAPAK -->
+                                    <div id="door-left" class="w-28 h-56 border-[4px] border-amber-400 rounded-sm relative shadow-xl flex flex-col justify-between p-1 bg-zinc-950 transition-all duration-300">
+                                        <div class="absolute inset-0 bg-gradient-to-tr from-zinc-800/60 via-zinc-500/20 to-amber-400/25 pointer-events-none"></div>
+                                        <span class="text-[7px] font-bold text-amber-400/60 z-10 tracking-widest">SOL KAPAK</span>
+                                        <div id="hinges-left" class="absolute inset-0 pointer-events-none"></div>
+                                        <div id="handle-left" class="absolute right-1 top-1/2 -translate-y-1/2 w-1 h-10 bg-amber-300 rounded-full z-20"></div>
+                                    </div>
 
-                                    <!-- KULP / TUTAMAK YERLEŞİMİ (DİNAMİK) -->
-                                    <div id="handle-element" class="absolute right-1 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-amber-300 border border-amber-500 shadow-amber-400/50 shadow-md rounded-full z-20"></div>
-
-                                    <span class="text-[8px] font-bold text-amber-400/60 z-10 tracking-widest pointer-events-none">ALT</span>
+                                    <!-- SAĞ KAPAK (Çift Kapak Modu) -->
+                                    <div id="door-right" class="w-28 h-56 border-[4px] border-amber-400 rounded-sm relative shadow-xl flex flex-col justify-between p-1 bg-zinc-950 transition-all duration-300 hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-tr from-zinc-800/60 via-zinc-500/20 to-amber-400/25 pointer-events-none"></div>
+                                        <span class="text-[7px] font-bold text-amber-400/60 z-10 tracking-widest">SAĞ KAPAK</span>
+                                        <div id="hinges-right" class="absolute inset-0 pointer-events-none"></div>
+                                        <div id="handle-right" class="absolute left-1 top-1/2 -translate-y-1/2 w-1 h-10 bg-amber-300 rounded-full z-20"></div>
+                                    </div>
                                 </div>
 
-                                <div id="side-description" class="text-[11px] text-zinc-400 mt-4">Profil rengi ve cam türü canlı önizlemeye yansıtılmaktadır.</div>
+                                <!-- MÜŞTERİNİN YAZDIĞI MENTEŞE MESAFE NOTU BURADA ANLIK GÖRÜNÜR -->
+                                <div id="badge-mesafe-notu" class="text-[10px] text-amber-400 font-medium bg-zinc-900 border border-amber-500/30 px-3 py-1 rounded-lg mt-4 max-w-[220px] truncate">
+                                    Mesafe Notu: Standart (Üstten/Alttan 10 cm)
+                                </div>
                             </div>
 
                         </div>
@@ -429,7 +438,7 @@
         </div>
     </section>
 
-    <!-- SABİT YÜZEN (FLOATING) WHATSAPP BUTONU -->
+    <!-- SABİT YÜZEN WHATSAPP BUTONU -->
     <a href="https://wa.me/905303416395?text=Merhaba,%20Atakray%20al%C3%BCminyum%20kapak%20ve%20profil%20sistemleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group border-2 border-amber-400/40">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
         <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out text-xs font-bold pl-0 group-hover:pl-3">WhatsApp'tan Yazın</span>
@@ -442,7 +451,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT: CANLI MENTEŞE VE ÖNİZLEME -->
+    <!-- SCRIPT: CANLI MENTEŞE ÖLÇÜ GÜNCELLEMESİ -->
     <script>
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('mobile-menu');
@@ -453,112 +462,100 @@
             updateHingeView();
         });
 
-        // Canlı Kapak Önizleme Simgeleri
         function updateHingeView() {
-            const selectedSide = document.querySelector('input[name="Mentese_Yonu"]:checked').value;
+            const kapakTipi = document.querySelector('input[name="Kapak_Sayisi"]:checked').value;
+            const isDouble = kapakTipi.includes("Çift");
             const count = parseInt(document.getElementById('select-adet').value);
-            const selectedGlass = document.getElementById('select-cam').value;
             const selectedProfil = document.getElementById('select-profil').value;
-            const isLeft = selectedSide.includes("SOL");
             
-            const lblSol = document.getElementById('lbl-sol');
-            const lblSag = document.getElementById('lbl-sag');
-            const textSol = document.getElementById('text-sol');
-            const textSag = document.getElementById('text-sag');
-            const title = document.getElementById('side-indicator-title');
-            const container = document.getElementById('hinge-container');
-            const handle = document.getElementById('handle-element');
-            const doorPreview = document.getElementById('door-preview');
-            const glassOverlay = document.getElementById('glass-overlay');
-
-            if (isLeft) {
-                lblSol.className = "flex items-center justify-center p-4 bg-black border-2 border-amber-400 rounded-xl cursor-pointer hover:border-amber-300 transition group";
-                lblSag.className = "flex items-center justify-center p-4 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer hover:border-amber-400 transition group";
-                textSol.className = "text-center text-amber-400";
-                textSag.className = "text-center text-zinc-500";
-                title.innerText = "SOL MENTEŞE ALÜMİNYUM KAPAK";
-                handle.className = "absolute right-1 top-1/2 -translate-y-1/2 w-1.5 h-12 rounded-full shadow z-20";
+            const customMesafe = document.getElementById('input-mesafe').value.trim();
+            const badgeNote = document.getElementById('badge-mesafe-notu');
+            
+            if (customMesafe) {
+                badgeNote.innerText = "Mesafe: " + customMesafe;
             } else {
-                lblSag.className = "flex items-center justify-center p-4 bg-black border-2 border-amber-400 rounded-xl cursor-pointer hover:border-amber-300 transition group";
-                lblSol.className = "flex items-center justify-center p-4 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer hover:border-amber-400 transition group";
-                textSag.className = "text-center text-amber-400";
-                textSol.className = "text-center text-zinc-500";
-                title.innerText = "SAĞ MENTEŞE ALÜMİNYUM KAPAK";
-                handle.className = "absolute left-1 top-1/2 -translate-y-1/2 w-1.5 h-12 rounded-full shadow z-20";
+                badgeNote.innerText = "Mesafe Notu: Standart (Üstten/Alttan 10 cm)";
             }
 
-            let profilBorderClass = "border-amber-400 ring-2 ring-amber-400/30";
-            let handleColorClass = "bg-amber-300 border border-amber-500 shadow-amber-400/50 shadow-md";
+            const lblTek = document.getElementById('lbl-tek');
+            const lblCift = document.getElementById('lbl-cift');
+            const singleDirBox = document.getElementById('single-direction-box');
+            const title = document.getElementById('side-indicator-title');
+            
+            const doorLeft = document.getElementById('door-left');
+            const doorRight = document.getElementById('door-right');
+            const hingesLeft = document.getElementById('hinges-left');
+            const hingesRight = document.getElementById('hinges-right');
+            const handleLeft = document.getElementById('handle-left');
+            const handleRight = document.getElementById('handle-right');
 
-            switch(selectedProfil) {
-                case "Mat Siyah":
-                    profilBorderClass = "border-zinc-800 ring-1 ring-zinc-700";
-                    handleColorClass = "bg-zinc-800 border border-zinc-950";
-                    break;
-                case "İnox / Bronz":
-                    profilBorderClass = "border-amber-700 ring-1 ring-amber-800";
-                    handleColorClass = "bg-amber-600 border border-amber-800";
-                    break;
-                case "Gold Sarı":
-                    profilBorderClass = "border-amber-400 ring-2 ring-amber-400/30";
-                    handleColorClass = "bg-amber-300 border border-amber-500 shadow-amber-400/50 shadow-md";
-                    break;
-                case "Parlak":
-                    profilBorderClass = "border-white ring-2 ring-amber-200/60 shadow-lg shadow-amber-500/20";
-                    handleColorClass = "bg-gradient-to-r from-white via-zinc-200 to-white border border-zinc-300 shadow-lg";
-                    break;
-                case "Özel RAL Boya":
-                    profilBorderClass = "border-amber-500";
-                    handleColorClass = "bg-amber-500 border border-amber-700";
-                    break;
-                default:
-                    profilBorderClass = "border-zinc-400";
-                    handleColorClass = "bg-zinc-300 border border-zinc-500";
+            let profilBorderClass = "border-amber-400";
+            if (selectedProfil === "Mat Siyah") profilBorderClass = "border-zinc-800";
+            if (selectedProfil === "İnox / Bronz") profilBorderClass = "border-amber-700";
+            if (selectedProfil === "Parlak") profilBorderClass = "border-white ring-2 ring-amber-200/50";
+
+            doorLeft.className = `w-28 h-56 border-[4px] ${profilBorderClass} rounded-sm relative shadow-xl flex flex-col justify-between p-1 bg-zinc-950 transition-all duration-300`;
+            doorRight.className = `w-28 h-56 border-[4px] ${profilBorderClass} rounded-sm relative shadow-xl flex flex-col justify-between p-1 bg-zinc-950 transition-all duration-300`;
+
+            if (isDouble) {
+                lblCift.className = "flex items-center justify-center p-3 bg-black border-2 border-amber-400 rounded-xl cursor-pointer";
+                lblCift.querySelector('span').className = "text-xs font-bold text-amber-400";
+                lblTek.className = "flex items-center justify-center p-3 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer";
+                lblTek.querySelector('span').className = "text-xs font-bold text-zinc-500";
+                
+                singleDirBox.classList.add('hidden');
+                doorRight.classList.remove('hidden');
+                title.innerText = "ÇİFT KAPAK (SAĞLI SOLLU ÖLÇÜ ŞEMASI)";
+
+                handleLeft.className = "absolute right-1 top-1/2 -translate-y-1/2 w-1 h-10 bg-amber-300 rounded-full z-20";
+                hingesLeft.innerHTML = getHingesHTML(count, true);
+
+                handleRight.className = "absolute left-1 top-1/2 -translate-y-1/2 w-1 h-10 bg-amber-300 rounded-full z-20";
+                hingesRight.innerHTML = getHingesHTML(count, false);
+
+            } else {
+                lblTek.className = "flex items-center justify-center p-3 bg-black border-2 border-amber-400 rounded-xl cursor-pointer";
+                lblTek.querySelector('span').className = "text-xs font-bold text-amber-400";
+                lblCift.className = "flex items-center justify-center p-3 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer";
+                lblCift.querySelector('span').className = "text-xs font-bold text-zinc-500";
+                
+                singleDirBox.classList.remove('hidden');
+                doorRight.classList.add('hidden');
+
+                const singleSide = document.querySelector('input[name="Mentese_Yonu"]:checked').value;
+                const isLeftM = singleSide.includes("SOL");
+                
+                const lblSol = document.getElementById('lbl-sol');
+                const lblSag = document.getElementById('lbl-sag');
+
+                if (isLeftM) {
+                    lblSol.className = "flex items-center justify-center p-3 bg-black border-2 border-amber-400 rounded-xl cursor-pointer";
+                    lblSol.querySelector('span').className = "text-xs font-bold text-amber-400";
+                    lblSag.className = "flex items-center justify-center p-3 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer";
+                    lblSag.querySelector('span').className = "text-xs font-bold text-zinc-500";
+
+                    title.innerText = "TEK KAPAK (SOL MENTEŞE ÖLÇÜ ŞEMASI)";
+                    handleLeft.className = "absolute right-1 top-1/2 -translate-y-1/2 w-1 h-10 bg-amber-300 rounded-full z-20";
+                    hingesLeft.innerHTML = getHingesHTML(count, true);
+                } else {
+                    lblSag.className = "flex items-center justify-center p-3 bg-black border-2 border-amber-400 rounded-xl cursor-pointer";
+                    lblSag.querySelector('span').className = "text-xs font-bold text-amber-400";
+                    lblSol.className = "flex items-center justify-center p-3 bg-black border-2 border-zinc-800 rounded-xl cursor-pointer";
+                    lblSol.querySelector('span').className = "text-xs font-bold text-zinc-500";
+
+                    title.innerText = "TEK KAPAK (SAĞ MENTEŞE ÖLÇÜ ŞEMASI)";
+                    handleLeft.className = "absolute left-1 top-1/2 -translate-y-1/2 w-1 h-10 bg-amber-300 rounded-full z-20";
+                    hingesLeft.innerHTML = getHingesHTML(count, false);
+                }
             }
+        }
 
-            let glassBgClass = "bg-zinc-950";
-            let glassOverlayClass = "bg-gradient-to-tr from-zinc-800/60 via-zinc-500/20 to-amber-400/20";
-
-            switch(selectedGlass) {
-                case "Füme Reflekte":
-                    glassBgClass = "bg-zinc-950";
-                    glassOverlayClass = "bg-gradient-to-tr from-zinc-800/60 via-zinc-500/20 to-amber-400/20";
-                    break;
-                case "Bronz Reflekte":
-                    glassBgClass = "bg-amber-950/80";
-                    glassOverlayClass = "bg-gradient-to-tr from-amber-600/40 via-amber-300/30 to-transparent";
-                    break;
-                case "Füme Ayna":
-                    glassBgClass = "bg-zinc-900";
-                    glassOverlayClass = "bg-gradient-to-tr from-zinc-500/50 via-white/40 to-zinc-800/40";
-                    break;
-                case "Füme Cam":
-                    glassBgClass = "bg-zinc-950/90";
-                    glassOverlayClass = "bg-gradient-to-tr from-zinc-800/40 via-zinc-600/20 to-transparent";
-                    break;
-                case "Düz Ayna":
-                    glassBgClass = "bg-zinc-300";
-                    glassOverlayClass = "bg-gradient-to-tr from-white/85 via-amber-100/40 to-zinc-300/70";
-                    break;
-                case "Satina":
-                    glassBgClass = "bg-zinc-200/90";
-                    glassOverlayClass = "bg-gradient-to-tr from-white/40 via-zinc-300/50 to-white/20";
-                    break;
-                case "Siyah Boyalı":
-                    glassBgClass = "bg-black";
-                    glassOverlayClass = "bg-gradient-to-tr from-zinc-900 via-zinc-800/50 to-black";
-                    break;
-            }
-
-            doorPreview.className = `w-32 h-56 border-[5px] ${profilBorderClass} rounded-sm relative shadow-2xl flex flex-col justify-between p-1 transition-all duration-300 ${glassBgClass}`;
-            glassOverlay.className = `absolute inset-0 ${glassOverlayClass} pointer-events-none transition-all duration-300`;
-            handle.className = `absolute ${isLeft ? 'right-1' : 'left-1'} top-1/2 -translate-y-1/2 w-1.5 h-12 ${handleColorClass} rounded-full z-20`;
-
+        function getHingesHTML(count, isLeftSide) {
             let html = "";
-            const sideClass = isLeft ? "-left-3" : "-right-3";
+            const sideClass = isLeftSide ? "-left-2.5" : "-right-2.5";
             const hingeElement = `
-                <div class="absolute ${sideClass} w-5 h-7 bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 rounded-sm border border-amber-700 shadow-xl flex items-center justify-center z-20">
-                    <div class="w-2 h-2 bg-black rounded-full border border-amber-300"></div>
+                <div class="absolute ${sideClass} w-4 h-5 bg-amber-400 rounded-xs border border-amber-700 shadow flex items-center justify-center z-20">
+                    <div class="w-1.5 h-1.5 bg-black rounded-full"></div>
                 </div>
             `;
 
@@ -575,8 +572,7 @@
                 html += `<div style="top: 60%;" class="absolute w-full">${hingeElement}</div>`;
                 html += `<div style="bottom: 10%;" class="absolute w-full">${hingeElement}</div>`;
             }
-
-            container.innerHTML = html;
+            return html;
         }
     </script>
 </body>
